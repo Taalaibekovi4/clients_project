@@ -1,5 +1,4 @@
-# clients/models.py
-from django.db import models
+from django.db import models  # не django.contrib
 
 class Client(models.Model):
     name = models.CharField(max_length=255)
@@ -17,6 +16,7 @@ class Client(models.Model):
     gender = models.CharField(max_length=20, blank=True, null=True)
     comment = models.TextField(blank=True, null=True)
     status = models.CharField(max_length=50, blank=True, null=True)
+    channel = models.CharField(max_length=100, blank=True, null=True)  # 👈 добавлено поле
 
     def __str__(self):
         return f"{self.name} ({self.phone})"
